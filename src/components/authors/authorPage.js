@@ -1,5 +1,6 @@
 var React = require('react');
 var AuthorApi = require('../../api/authorApi');
+var AuthorList = require('./authorList')
 
 var Authors = React.createClass({
 	getinitialState:function(){
@@ -25,15 +26,8 @@ var Authors = React.createClass({
 		return(
 			<div>
 				<h1>Authors</h1>
-				<table className="table">
-					<thead>
-						<th>ID</th>
-						<th>Name</th>
-					</thead>
-					<tbody>
-						{this.state.authors.map(creteAuthorRow,this)}
-					</tbody>
-				</table>
+				<AuthorList authors={this.state.authors}/>
+				
 			</div>
 		);
 	}
